@@ -1,12 +1,12 @@
-FROM docker:latest
-
-MAINTAINER Lothar Arndt <lothar.arndt@equality-it.com.au>
+FROM python:3.9-alpine
 
 RUN apk --no-cache add \
-      bash \
-      curl \
-      jq \
-      python \
-      py-pip && \
-      pip install awscli && \
-      mkdir /root/.aws
+    bash \
+    curl \
+    jq \
+    postgresql-client \
+    && pip install awscli \
+    && mkdir /root/.aws
+
+ENTRYPOINT ["/bin/bash"]
+
