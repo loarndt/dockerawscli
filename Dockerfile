@@ -5,6 +5,7 @@ RUN apk --no-cache add \
     curl \
     jq \
     postgresql-client \
+    openssh \
     && pip install awscli \
     && mkdir /root/.aws
 
